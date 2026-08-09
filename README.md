@@ -12,6 +12,7 @@ GitHub Copilot の presentation canvas で表示するプレゼンテーショ�
 | `github-copilot-app-2.md` | GitHub Copilot App の紹介 |
 | `jat-202607-hiroshima.md` | GitHub Copilot App の canvas 紹介 |
 | `kinoko-takenoko.md` | presentation Skill のサンプル |
+| `self-introduction.md` | 共通で使う自己紹介スライド |
 
 `design-adr.memo.md` は `design-adr.md` の編集メモです。
 
