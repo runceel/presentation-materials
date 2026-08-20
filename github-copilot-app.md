@@ -1,3 +1,8 @@
+---
+theme: custom
+theme-file: ./themes/ms-modern/theme.css
+---
+
 # GitHub Copilot app
 
 **Agent と進める開発を、ひとつのデスクトップ体験に。**

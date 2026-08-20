@@ -1,3 +1,8 @@
+---
+theme: custom
+theme-file: ./themes/ms-modern/theme.css
+---
+
 # Copilot canvas で<br>プレゼンしよう
 
 GitHub Copilot とつくる、ライブなスライド発表

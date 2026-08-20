@@ -1,6 +1,8 @@
 ---
 title: GitHub Copilot App の canvas はイイぞ
 kicker: `/create-canvas 可愛い猫を表示して`
+theme: custom
+theme-file: ./themes/ms-modern/theme.css
 ---
 
 # GitHub Copilot App の canvas はイイぞ
@@ -91,4 +93,3 @@ GitHub Copilot App にこれを打ち込んでみよう！
 ---
 
 # ご清聴ありがとうございました
-

@@ -1,6 +1,8 @@
 ---
 title: AIが設計書を歴史書にする前に
 kicker: ARCHITECTURE DECISION RECORD
+theme: custom
+theme-file: ./themes/ms-modern/theme.css
 ---
 
 # AIが設計書を<br>歴史書にする前に

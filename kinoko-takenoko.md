@@ -1,3 +1,8 @@
+---
+theme: custom
+theme-file: ./themes/ms-modern/theme.css
+---
+
 # きのこ vs たけのこ<br>戦争に終止符を
 
 ～ なぜ「きのこの山」が優れているのか ～

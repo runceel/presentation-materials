@@ -1,6 +1,8 @@
 ---
 title: GitHub Copilot App
 kicker: DEVELOPERS' WORKFLOW
+theme: custom
+theme-file: ./themes/ms-modern/theme.css
 ---
 
 # GitHub Copilot App

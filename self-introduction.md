@@ -1,5 +1,7 @@
 ---
 title: 自己紹介
+theme: custom
+theme-file: ./themes/ms-modern/theme.css
 ---
 
 ## 自己紹介
