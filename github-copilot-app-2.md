@@ -1,4 +1,5 @@
 ---
+layout: title
 title: GitHub Copilot App
 kicker: DEVELOPERS' WORKFLOW
 theme: custom

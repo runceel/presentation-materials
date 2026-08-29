@@ -1,4 +1,5 @@
 ---
+layout: title
 theme: custom
 theme-file: ./themes/ms-modern/theme.css
 ---
