@@ -1,4 +1,5 @@
 ---
+layout: title
 title: GitHub Copilot App の canvas はイイぞ
 kicker: `/create-canvas 可愛い猫を表示して`
 theme: custom

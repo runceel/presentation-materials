@@ -1,4 +1,5 @@
 ---
+layout: title
 title: AIが設計書を歴史書にする前に
 kicker: ARCHITECTURE DECISION RECORD
 theme: custom
