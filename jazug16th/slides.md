@@ -1,5 +1,6 @@
 ---
 layout: title
+size: large
 theme: custom
 theme-file: ./themes/ms-modern/theme.css
 deck: JAZUG 16th Short Session
@@ -18,6 +19,129 @@ Copilot SDKのagentハーネスは維持し、BYOKでMicrosoft Foundryのモデ�
 -->
 
 ---
+layout: center
+size: large
+---
+
+## GitHub Copilot SDK とは
+
+- GitHub Copilot の **agent harness** をアプリケーションに組み込む SDK
+- session、会話履歴、tool call、ストリーミング応答を扱う
+- 組み込みツールに加え、独自ツールや MCP server を接続できる
+- **対応言語：** TypeScript / Python / Go / .NET / Java / Rust
+
+```architecture
+{
+  "version": 1,
+  "title": "GitHub Copilot SDK の構成",
+  "canvas": {
+    "width": 1600,
+    "height": 440
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": "app",
+      "x": 60,
+      "y": 135,
+      "width": 320,
+      "height": 170,
+      "text": "アプリ",
+      "icon": "browser",
+      "style": {
+        "fill": "surface",
+        "stroke": "border",
+        "fontSize": 28,
+        "fontWeight": 700,
+        "autoFit": "none"
+      }
+    },
+    {
+      "type": "node",
+      "id": "sdk",
+      "x": 530,
+      "y": 105,
+      "width": 440,
+      "height": 230,
+      "text": "GitHub Copilot SDK\nAgent harness",
+      "icon": "component",
+      "style": {
+        "fill": "accentStrong",
+        "stroke": "accentStrong",
+        "textColor": "light",
+        "fontSize": 28,
+        "fontWeight": 700,
+        "autoFit": "none"
+      }
+    },
+    {
+      "type": "node",
+      "id": "model",
+      "x": 1120,
+      "y": 20,
+      "width": 400,
+      "height": 170,
+      "text": "Model provider",
+      "icon": "cloud",
+      "style": {
+        "fill": "surfaceInfo",
+        "stroke": "borderInfo",
+        "fontSize": 28,
+        "fontWeight": 700,
+        "autoFit": "none"
+      }
+    },
+    {
+      "type": "node",
+      "id": "tools",
+      "x": 1120,
+      "y": 250,
+      "width": 400,
+      "height": 170,
+      "text": "Tools / MCP",
+      "icon": "api",
+      "style": {
+        "fill": "surfaceSuccess",
+        "stroke": "borderSuccess",
+        "fontSize": 28,
+        "fontWeight": 700,
+        "autoFit": "none"
+      }
+    },
+    {
+      "type": "connector",
+      "from": "app",
+      "to": "sdk",
+      "arrow": true,
+      "routing": "straight"
+    },
+    {
+      "type": "connector",
+      "from": "sdk",
+      "to": "model",
+      "arrow": true,
+      "routing": "straight"
+    },
+    {
+      "type": "connector",
+      "from": "sdk",
+      "to": "tools",
+      "arrow": true,
+      "routing": "straight"
+    }
+  ]
+}
+```
+
+<!--
+目安: 1:00
+Copilot SDKは単なるモデル呼び出し用SDKではなく、sessionやtool実行を含むagent harnessをアプリケーションから利用するためのSDKです。TypeScript、Python、Go、.NET、Java、Rustの6言語に対応しています。このセッションでは、そのハーネスを維持したまま、モデルproviderとしてMicrosoft Foundryを指定します。
+-->
+
+---
+layout: center
+size: large
+---
 
 ## Copilot SDK と BYOK
 
@@ -31,6 +155,9 @@ Copilot SDKのagentハーネスは維持し、BYOKでMicrosoft Foundryのモデ�
 BYOKはGitHub Copilot認証を推論経路に使わず、設定したモデルproviderを利用します。Foundryではカタログ上のモデル名ではなく、Foundryリソースで作成したdeployment名をmodelとして指定します。Responses API対応は選択モデルとruntimeで確認します。
 -->
 
+---
+layout: center
+size: large
 ---
 
 ## 構成要素と役割
@@ -51,6 +178,9 @@ SDKのBYOK設定とMAFのagent抽象化は別の役割です。MAF providerが�
 -->
 
 ---
+layout: center
+size: large
+---
 
 ## DEMO 1｜ローカル実行
 
@@ -68,6 +198,9 @@ SDKのBYOK設定とMAFのagent抽象化は別の役割です。MAF providerが�
 -->
 
 ---
+layout: center
+size: large
+---
 
 ## Hosted Agent の実行とモデル認証
 
@@ -81,6 +214,9 @@ SDKのBYOK設定とMAFのagent抽象化は別の役割です。MAF providerが�
 ここでは二つの認証を区別します。クライアントからHosted Agent endpointへの認証と、Hosted Agent内のBYOK providerからモデルendpointへの認証です。後者はtoken providerが実際に使うprincipalを確認します。Foundry projectのmanaged identityにproject endpoint用のFoundry Userロールがあることは、BYOKの直接endpoint呼び出しに使う別principalの権限を意味しません。`/openai/v1/` のkeyless推論ではscopeは `https://ai.azure.com/.default` です。必要なロールはモデルとendpointにより異なり、OpenAIモデル専用なら `Cognitive Services OpenAI User`、より広いFoundryモデルの推論では `Cognitive Services User` または `Foundry User` が候補です。選択deploymentの要件を確認します。
 -->
 
+---
+layout: center
+size: large
 ---
 
 ## DEMO 2｜Aspire で Azure にデプロイ
@@ -100,6 +236,9 @@ Aspireを使った構成とデプロイを示します。AspireはBYOKのprovide
 -->
 
 ---
+layout: center
+size: large
+---
 
 ## DEMO 2｜Hosted Agent の実行
 
@@ -112,6 +251,9 @@ Aspireを使った構成とデプロイを示します。AspireはBYOKのprovide
 デプロイしたagentにローカルと同じ入力を与え、推論先がFoundry deploymentであること、ツール実行と応答を確認します。デプロイ操作に時間がかかる場合は、事前にデプロイしたendpointを使います。
 -->
 
+---
+layout: center
+size: large
 ---
 
 ## まとめ
